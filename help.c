@@ -27,6 +27,12 @@ George Gesslein II, P.O. Box 224, Lansing, NY  14882-0224  USA.
 #include "includes.h"
 #include "license.h"	/* the current software license for Mathomatic */
 
+
+#if defined( HAVE_CONFIG_H )
+#  include "config.h"
+#endif
+
+
 #define	CMD_REQUIRED_NCHARS	4	/* Only type this many characters to run a Mathomatic command. */
 					/* Set this to a high number like 50 to require all letters of a command to be typed. */
 

@@ -24,6 +24,12 @@ George Gesslein II, P.O. Box 224, Lansing, NY  14882-0224  USA.
 
 #include "includes.h"
 
+
+#if defined( HAVE_CONFIG_H )
+#  include "config.h"
+#endif
+
+
 #define	OPT_MIN_SIZE	7	/* Minimum size (in tokens) of repeated expressions to find in optimize command. */
 
 enum spf_function {

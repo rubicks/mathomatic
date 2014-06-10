@@ -71,14 +71,18 @@ George Gesslein II, P.O. Box 224, Lansing, NY  14882-0224  USA.
 
 #include "includes.h"
 #if	!NO_GETOPT_H
-#include <getopt.h>
+#  include <getopt.h>
 #endif
 
 #if	WIN32_CONSOLE_COLORS
-#include <windows.h>
-#include <wincon.h>
-
+#  include <windows.h>
+#  include <wincon.h>
 HANDLE	hOut;
+#endif
+
+
+#if defined( HAVE_CONFIG_H )
+#  include "config.h"
 #endif
 
 /*
@@ -88,7 +92,7 @@ void
 usage(fp)
 FILE	*fp;
 {
-	fprintf(fp, _("Mathomatic computer algebra system, version %s\n"), VERSION);
+    fprintf(fp, _("Mathomatic computer algebra system, version %s, %s\n"), VERSION, __DATE__ );
 	fprintf(fp, _("Usage: %s [ options ] [ input_files or input ]\n\n"), prog_name);
 	fprintf(fp, _("Options:\n"));
 	fprintf(fp, _("  -a             Enable alternative color mode.\n"));

@@ -28,6 +28,10 @@ George Gesslein II, P.O. Box 224, Lansing, NY  14882-0224  USA.
 #include <termios.h>
 #endif
 
+#if defined( HAVE_CONFIG_H )
+#  include "config.h"
+#endif
+
 /*
  * Display the main Mathomatic startup message.
  * fp is the output file stream pointer it goes to, and should be stdout or gfp,
