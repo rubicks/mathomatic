@@ -19,6 +19,7 @@ AC_PROG_LN_S
 # Checks for libraries.
 # FIXME: Replace `main' with a function in `-lm':
 AC_CHECK_LIB([m], [cos])
+AC_CHECK_LIB([readline], [rl_initialize])
 
 # Checks for header files.
 AC_CHECK_HEADERS([float.h libintl.h limits.h locale.h stdlib.h string.h sys/ioctl.h sys/time.h termios.h unistd.h])

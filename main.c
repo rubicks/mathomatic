@@ -81,10 +81,6 @@ HANDLE	hOut;
 #endif
 
 
-#if defined( HAVE_CONFIG_H )
-#  include "config.h"
-#endif
-
 /*
  * Display invocation usage info.
  */

@@ -24,6 +24,14 @@ George Gesslein II, P.O. Box 224, Lansing, NY  14882-0224  USA.
  
  */
 
+
+#if HAVE_CONFIG_H
+#  include "config.h"
+#else
+#  error "need config.h"
+#endif
+
+
 #define	true	1
 #define	false	0
 
@@ -97,23 +105,30 @@ George Gesslein II, P.O. Box 224, Lansing, NY  14882-0224  USA.
 #include <locale.h>
 #endif
 
-#if	READLINE
-#if	0		/* The following two includes only needed if explicitly calling ncurses functions. */
-#include <curses.h>
-#include <term.h>
-#endif
-#include <readline/readline.h>
-#include <readline/history.h>
-#endif
-#if	EDITLINE	/* Editline is a stripped down version of readline. */
+#if HAVE_LIBREADLINE
+#  define READLINE 1
+
+#  if 0
+/* The following two includes only needed if explicitly calling ncurses
+   functions. */
+#    include <curses.h>
+#    include <term.h>
+#  endif // 0
+
+#  include <readline/readline.h>
+#  include <readline/history.h>
+#endif // HAVE_LIBREADLINE
+
+
+#if EDITLINE /* Editline is a stripped down version of readline. */
 #include <editline.h>
 #endif
 
 /* Include files from the current directory: */
-#include "standard.h"	/* a standard include file for any math program written in C */
-#include "am.h"		/* the main include file for Mathomatic, contains tunable parameters */
-#include "complex.h"	/* floating point complex number arithmetic function prototypes */
-#include "proto.h"	/* global function prototypes, made with cproto utility */
-#include "altproto.h"	/* backup global function prototypes, in case of no proto.h */
-#include "externs.h"	/* global variable extern definitions */
-#include "blt.h"	/* blt() function definition */
+#include "standard.h" /* a standard include file for any math program written in C */
+#include "am.h"  /* the main include file for Mathomatic, contains tunable parameters */
+#include "complex.h" /* floating point complex number arithmetic function prototypes */
+#include "proto.h" /* global function prototypes, made with cproto utility */
+#include "altproto.h" /* backup global function prototypes, in case of no proto.h */
+#include "externs.h" /* global variable extern definitions */
+#include "blt.h" /* blt() function definition */
