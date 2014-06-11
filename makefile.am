@@ -1,17 +1,65 @@
 # mathomatic/makefile.am
 
-noinst_LIBRARIES = libmathomatic.a
 
-libmathomatic_a_SOURCES = globals.c am.c solve.c help.c parse.c cmds.c		\
-simplify.c factor.c super.c unfactor.c poly.c diff.c integrate.c complex.c	\
-complex_lib.c list.c gcd.c factor_int.c
+SUBDIRS = primes
+
+
+EXTRA_DIST = tests
+
+
+noinst_LTLIBRARIES = libcommon.la
+libcommon_la_SOURCES = globals.c am.c solve.c help.c parse.c cmds.c simplify.c	\
+factor.c super.c unfactor.c poly.c diff.c integrate.c complex.c complex_lib.c	\
+list.c gcd.c factor_int.c core.c altproto.h blt.h config.h includes.h		\
+standard.h am.h complex.h externs.h license.h proto.h
 
 
 bin_PROGRAMS = mathomatic
-
 mathomatic_SOURCES = main.c
+mathomatic_LDADD = libcommon.la
 
-mathomatic_LDADD = libmathomatic.a
+
+lib_LTLIBRARIES = libmathomatic.la
+libmathomatic_la_SOURCES = lib.c mathomatic.h
+libmathomatic_la_LIBADD = libcommon.la
+libmathomatic_la_LDFLAGS = -version-info 0:1:0
+
+
+check_PROGRAMS = example #testmain
+
+
+check_SCRIPTS = alltests.sh
+
+
+TESTS = $(check_PROGRAMS) $(check_SCRIPTS)
+
+
+example_SOURCES = example.c
+example_LDADD = libmathomatic.la
+
+
+alltests.sh: mathomatic
+	echo 'echo -n && \ ' > $@
+	echo '  cd $(abs_srcdir)/tests && \ ' >> $@
+	echo '  $(abs_builddir)/mathomatic -t all 0<&- >test.out && \ ' >> $@
+	echo '  diff -u --strip-trailing-cr all.out test.out && \ ' >> $@
+	echo '  rm test.out && \ ' >> $@
+	echo '  cd - ' >> $@
+	chmod +x $@
+
+
+CLEANFILES = alltests.sh
+
+
+
+
+
+
+# testmain_SOURCES = testmain.c
+# testmain_LDADD = libmathomatic.la
+
+
+
 
 
 # # appended makefile follows

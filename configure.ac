@@ -2,9 +2,11 @@
 # Process this file with autoconf to produce a configure script.
 
 AC_PREREQ([2.69])
-AC_INIT([mathomatic], [16.0.5], [rubicks00@gmail.com])
+AC_INIT([mathomatic], [16.0.6], [rubicks00@gmail.com])
 AC_LANG_PUSH([C])
 AM_INIT_AUTOMAKE
+LT_PREREQ([2.4])
+LT_INIT([dlopen])
 AC_CONFIG_SRCDIR([diff.c])
 AC_CONFIG_HEADERS([config.h])
 
@@ -12,7 +14,6 @@ AC_CONFIG_HEADERS([config.h])
 AC_PROG_CXX
 AC_PROG_AWK
 AC_PROG_CC
-AC_PROG_RANLIB
 AC_PROG_INSTALL
 AC_PROG_LN_S
 

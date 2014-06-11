@@ -1,11 +1,11 @@
 # mathomatic/lib/makefile.am
 
-noinst_LIBRARIES = libmathomatic.a
+# noinst_LIBRARIES = libmathomatic.a
 
-libmathomatic_a_SOURCES = ./mathomatic.h ../globals.c ../am.c ../solve.c	\
-../help.c ../parse.c ../cmds.c ../simplify.c ../factor.c ../super.c		\
-../unfactor.c ../poly.c ../diff.c ../integrate.c ../complex.c ../complex_lib.c	\
-../list.c ../gcd.c ../factor_int.c
+# libmathomatic_a_SOURCES = ./mathomatic.h ../globals.c ../am.c ../solve.c	\
+# ../help.c ../parse.c ../cmds.c ../simplify.c ../factor.c ../super.c		\
+# ../unfactor.c ../poly.c ../diff.c ../integrate.c ../complex.c ../complex_lib.c	\
+# ../list.c ../gcd.c ../factor_int.c
 
 
 # appended makefile follows

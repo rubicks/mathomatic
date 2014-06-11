@@ -3,8 +3,13 @@
 bin_PROGRAMS = matho-primes matho-pascal matho-sumsq
 
 matho_primes_SOURCES = matho-primes.c
+# matho_primes_CPPFLAGS = -I$(top_srcdir)
+
 matho_pascal_SOURCES = matho-pascal.c
+# matho_pascal_CPPFLAGS = -I$(top_srcdir)
+
 matho_sumsq_SOURCES = matho-sumsq.c lsqrt.c
+# matho_sumsq_CPPFLAGS = -I$(top_srcdir)
 
 # # Makefile for compiling and installing the Mathomatic Prime Number Tools
 # # under a Unix-like system.
