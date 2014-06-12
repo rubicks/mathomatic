@@ -1,7 +1,7 @@
 #                                               -*- Autoconf -*-
 # Process this file with autoconf to produce a configure script.
 
-AC_PREREQ([2.69])
+AC_PREREQ([2.68])
 AC_INIT([mathomatic], [16.0.6], [rubicks00@gmail.com])
 AC_LANG_PUSH([C])
 AM_INIT_AUTOMAKE
