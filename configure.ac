@@ -7,8 +7,9 @@ AC_LANG_PUSH([C])
 AM_INIT_AUTOMAKE
 LT_PREREQ([2.4])
 LT_INIT([dlopen])
-AC_CONFIG_SRCDIR([diff.c])
+AC_CONFIG_SRCDIR([main.c])
 AC_CONFIG_HEADERS([config.h])
+AC_CONFIG_MACRO_DIR([m4])
 
 # Checks for programs.
 AC_PROG_CXX
@@ -35,6 +36,6 @@ AC_FUNC_MALLOC
 AC_FUNC_STRTOD
 AC_CHECK_FUNCS([alarm getcwd isascii memmove memset modf pow setlocale sqrt strcasecmp strchr strdup strncasecmp strpbrk strrchr strtol])
 
-AC_CONFIG_FILES([makefile
-                 primes/makefile])
+AC_CONFIG_FILES([Makefile
+                 primes/Makefile])
 AC_OUTPUT
