@@ -1,0 +1,13 @@
+language: c
+
+compiler:
+  - gcc
+  - clang
+
+script:
+  - mkdir -v build
+  - cd build
+  - autoreconf -ivf ..
+  - ../configure --prefix=${HOME}
+  - make --debug check
+  - make --debug distcheck
