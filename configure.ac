@@ -27,7 +27,7 @@ AC_CHECK_LIB([readline], [rl_initialize])
 AC_CHECK_HEADERS([float.h libintl.h limits.h locale.h stdlib.h string.h sys/ioctl.h sys/time.h termios.h unistd.h])
 
 # Checks for typedefs, structures, and compiler characteristics.
-AC_CHECK_HEADER_STDBOOL
+#AC_CHECK_HEADER_STDBOOL
 AC_C_INLINE
 
 # Checks for library functions.
